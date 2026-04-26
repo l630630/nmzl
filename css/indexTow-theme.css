@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=ZCOOL+XiaoWei&display=swap');
+
+:root {
+  --gold: #c8a84b;
+  --gold-light: #e8c96a;
+  --green-glow: #74c69d;
+  --teal: #02a6b5;
+  --dark: #060c08;
+  --panel-bg: rgba(8, 18, 12, 0.82);
+  --panel-border: rgba(200, 168, 75, 0.22);
+  --text-primary: #f0ead6;
+  --text-dim: rgba(240, 234, 214, 0.55);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  font-family: 'Noto Serif SC', serif;
+  background: var(--dark);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+/* ── 背景 ── */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background: url(images/bg.jpg) no-repeat center center / cover;
+  filter: brightness(0.15) saturate(0.5);
+  z-index: 0;
+}
+
+body::after {
+  content: '';
+  position: fixed; inset: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(45,106,79,0.3) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 30% at 80% 80%, rgba(200,168,75,0.1) 0%, transparent 50%),
+    linear-gradient(180deg, rgba(6,12,8,0.3) 0%, rgba(6,12,8,0.6) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ── Header ── */
+#header {
+  position: relative;
+  z-index: 10;
+  height: 1.25rem;
+  width: 100%;
+  background: url(images/head_bg.png) no-repeat top center;
+  background-size: 100% 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#header h1 {
+  font-family: 'ZCOOL XiaoWei', serif;
+  font-size: 0.44rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 50%, var(--green-glow) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+  line-height: 1.25rem;
+}
+
+#header .showTime {
+  position: absolute; left: 0.375rem; top: 0;
+  line-height: 1.25rem;
+  color: var(--text-dim);
+  font-size: 0.22rem;
+  letter-spacing: 0.04em;
+}
+
+#header .hrefgo {
+  position: absolute; right: 0.375rem; top: 0;
+  line-height: 1.25rem;
+  font-size: 0.22rem;
+  letter-spacing: 0.04em;
+}
+#header .hrefgo a { text-decoration: none; color: var(--text-dim); transition: color 0.3s; }
+#header .hrefgo a:hover { color: var(--gold-light); }
+
+/* ── 主容器 ── */
+#mainbox {
+  position: relative;
+  z-index: 2;
+  height: calc(100vh - 1.25rem);
+  padding: 0.2rem;
+}
+
+#mainbox .column { height: 100%; }
+
+/* ── 双图容器 ── */
+.paneltwo {
+  display: flex;
+  gap: 0.2rem;
+  height: 100%;
+  align-items: stretch;
+}
+
+/* ── 单图面板 ── */
+.zuotu1, .youtu1 {
+  flex: 1;
+  position: relative;
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 3px;
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.4s;
+}
+
+.zuotu1:hover, .youtu1:hover {
+  border-color: rgba(200,168,75,0.45);
+}
+
+/* 四角装饰 */
+.zuotu1::before, .youtu1::before {
+  content: '';
+  position: absolute; top: 0; left: 0;
+  width: 14px; height: 14px;
+  border-top: 2px solid var(--gold);
+  border-left: 2px solid var(--gold);
+  z-index: 5;
+}
+.zuotu1::after, .youtu1::after {
+  content: '';
+  position: absolute; top: 0; right: 0;
+  width: 14px; height: 14px;
+  border-top: 2px solid var(--gold);
+  border-right: 2px solid var(--gold);
+  z-index: 5;
+}
+
+/* 底部角 */
+.zuotu1 .panel-footer::before, .youtu1 .panel-footer::before {
+  content: '';
+  position: absolute; bottom: 0; left: 0;
+  width: 14px; height: 14px;
+  border-bottom: 2px solid var(--gold);
+  border-left: 2px solid var(--gold);
+}
+.zuotu1 .panel-footer::after, .youtu1 .panel-footer::after {
+  content: '';
+  position: absolute; bottom: 0; right: 0;
+  width: 14px; height: 14px;
+  border-bottom: 2px solid var(--gold);
+  border-right: 2px solid var(--gold);
+}
+
+/* 顶部光条 */
+.zuotu1 .panel-top-line, .youtu1 .panel-top-line {
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0.6;
+}
+
+/* ── 标题 ── */
+.zuotu1 h2, .youtu1 h2 {
+  font-family: 'ZCOOL XiaoWei', serif;
+  font-size: 0.26rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-align: center;
+  padding: 0.18rem 0 0.1rem;
+  background: linear-gradient(90deg, var(--gold-light), var(--gold), var(--green-glow));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  flex-shrink: 0;
+}
+
+/* 标题下分割线 */
+.zuotu1 h2::after, .youtu1 h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 0.08rem auto 0;
+}
+
+/* ── 图表区 ── */
+.zuotu1 .chart, .youtu1 .chart {
+  flex: 1;
+  min-height: 0;
+}
+
+/* ── panel-footer 占位 ── */
+.panel-footer {
+  position: relative;
+  height: 0.15rem;
+  flex-shrink: 0;
+}
+
+/* ── 滚动条 ── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--dark); }
+::-webkit-scrollbar-thumb { background: rgba(200,168,75,0.3); border-radius: 2px; }

@@ -1,69 +1,152 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>关于</title>
-		<link rel="stylesheet" href="../css/nav.css">
-		<link rel="stylesheet" href="../css/body.css">
-		<link rel="stylesheet" href="../css/about.css">
-	</head>
-	<body>
-		<!-- <nav class="homenav">
-			<div class="navtitle"><strong>聚焦三农</strong>|三农</div>
-			<a href="about.html">主页</a>
-			<a href="home.html">关于</a>
-			<a href="blog.html">跳转</a>
-			<a href="album.html">相册</a>
-			<a href="join.html">加入</a>
-			<div class="navanim home"></div>
-			<div class="none"></div>
-		</nav> -->
-		<div class="mid">
-			<div class="headimg">
-				<!-- <img src="visual-analysis-platform-for-agricultural\image\head.jpeg" alt=""> -->
-				<h1>三农问题</h1>
-			</div>
-			<div class="ab a1">
-				<div class="txt">
-					<h2>乡村振兴战略</h2>
-					<p>&emsp;&emsp;实施乡村振兴战略，要坚持党管农村工作，坚持农业农村优先发展，坚持农民主体地位，坚持乡村全面振兴，坚持城乡融合发展，坚持人与自然和谐共生，坚持因地制宜、循序渐进。
-						巩固和完善农村基本经营制度，保持土地承包关系稳定并长久不变，第二轮土地承包到期后再延长三十年。
-						确保国家粮食安全，把中国人的饭碗牢牢端在自己手中。加强农村基层基础工作，培养造就一支懂农业、爱农村、爱农民的“三农”工作队伍。</p>
-				</div>
-				<div class="imghid">
-					<div class="img"></div>
-				</div>
-			</div>
-			<div class="ab a2">
-				<div class="imghid">
-					<div class="img"></div>
-				</div>
-				<div class="txt">
-					<h2>协调发展</h2>
-					<p>&emsp;&emsp;协调发展全面推进。针对城乡“一条腿长、一条腿短”问题突出、村庄空心化、农户空巢化、农民老年化等“乡村病”问题，
-						以实施乡村振兴战略为“三农”工作的总抓手，促进以工补农、以城带乡，推动工农互促、城乡互补、协调发展、共同繁荣的新型工农城乡关系加快形成，
-						统筹推进农村经济建设、政治建设、文化建设、社会建设、生态文明建设和党的建设，动员全党全社会力量坚决打赢脱贫攻坚战后，举全党全社会之力推动乡村振兴。
-						协调发展、全面推进这一历史性变革，促进“三农”全面发展。</p>
-				</div>
-			</div>
-			<div class="ab a3">
-				<div class="txt">
-					<h2>农业智屏</h2>
-					<p>&emsp;&emsp;随着信息化技术的快速发展，农业也逐渐融入到数字时代。农业信息化大屏作为农业现代化的重要组成部分，
-						正在成为农业生产、管理、销售等环节的重要工具。农业信息化大屏通过数据可视化的方式呈现出农业操作和管理中的各种数据，
-						从而辅助农业生产管理，提升农业效率和效益。</p>
-				</div>
-				<div class="imghid">
-					<div class="img"></div>
-				</div>
-			</div>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>三农问题 — 农科慧览视界</title>
+  <link rel="stylesheet" href="../css/about-new.css">
+</head>
+<body>
 
-		</div>
-		<footer class="foot">
-			<p style="font-size: 20px;">解决三农问题重中之重</p>
-			<p style="font-size: 5px;">图片、文字来源于网络</p>
-		</footer>
-	</body>
+  <canvas id="particles"></canvas>
+
+  <!-- 返回按钮 -->
+  <a class="back-btn" href="../frist/index.html">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M19 12H5M12 5l-7 7 7 7"/>
+    </svg>
+    返回首页
+  </a>
+
+  <!-- Hero 区 -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-tag">SANNONG ISSUES · 三农问题</div>
+      <h1 class="hero-title">三农问题</h1>
+      <p class="hero-sub">农民 · 农业 · 农村</p>
+      <div class="hero-line"></div>
+      <p class="hero-desc">坚持把解决好"三农"问题作为全党工作重中之重<br>举全党全社会之力推动乡村振兴</p>
+      <div class="scroll-hint">
+        <span>向下滚动</span>
+        <div class="scroll-arrow"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 内容区 -->
+  <main class="content">
+
+    <!-- 卡片 1 -->
+    <article class="section-card card-right reveal">
+      <div class="card-image">
+        <img src="../image/about1.jpg" alt="乡村振兴战略">
+        <div class="card-image-overlay"></div>
+        <div class="card-number">01</div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">RURAL REVITALIZATION</div>
+        <h2>乡村振兴战略</h2>
+        <div class="card-divider"></div>
+        <p>实施乡村振兴战略，要坚持党管农村工作，坚持农业农村优先发展，坚持农民主体地位，坚持乡村全面振兴，坚持城乡融合发展，坚持人与自然和谐共生，坚持因地制宜、循序渐进。</p>
+        <p>巩固和完善农村基本经营制度，保持土地承包关系稳定并长久不变，第二轮土地承包到期后再延长三十年。确保国家粮食安全，把中国人的饭碗牢牢端在自己手中。加强农村基层基础工作，培养造就一支懂农业、爱农村、爱农民的"三农"工作队伍。</p>
+        <div class="card-stat">
+          <div class="stat-item"><span class="stat-num">30<em>年</em></span><span class="stat-label">土地承包延长</span></div>
+          <div class="stat-item"><span class="stat-num">14<em>亿</em></span><span class="stat-label">粮食安全保障</span></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 卡片 2 -->
+    <article class="section-card card-left reveal">
+      <div class="card-image">
+        <img src="../image/about2.jpg" alt="协调发展">
+        <div class="card-image-overlay"></div>
+        <div class="card-number">02</div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">COORDINATED DEVELOPMENT</div>
+        <h2>协调发展</h2>
+        <div class="card-divider"></div>
+        <p>协调发展全面推进。针对城乡"一条腿长、一条腿短"问题突出、村庄空心化、农户空巢化、农民老年化等"乡村病"问题，以实施乡村振兴战略为"三农"工作的总抓手，促进以工补农、以城带乡。</p>
+        <p>推动工农互促、城乡互补、协调发展、共同繁荣的新型工农城乡关系加快形成，统筹推进农村经济建设、政治建设、文化建设、社会建设、生态文明建设和党的建设。</p>
+        <div class="card-stat">
+          <div class="stat-item"><span class="stat-num">5<em>大</em></span><span class="stat-label">建设统筹推进</span></div>
+          <div class="stat-item"><span class="stat-num">全面<em></em></span><span class="stat-label">乡村振兴目标</span></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 卡片 3 -->
+    <article class="section-card card-right reveal">
+      <div class="card-image">
+        <img src="../image/about3.jpg" alt="农业智屏">
+        <div class="card-image-overlay"></div>
+        <div class="card-number">03</div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">DIGITAL AGRICULTURE</div>
+        <h2>农业智屏</h2>
+        <div class="card-divider"></div>
+        <p>随着信息化技术的快速发展，农业也逐渐融入到数字时代。农业信息化大屏作为农业现代化的重要组成部分，正在成为农业生产、管理、销售等环节的重要工具。</p>
+        <p>农业信息化大屏通过数据可视化的方式呈现出农业操作和管理中的各种数据，从而辅助农业生产管理，提升农业效率和效益。</p>
+        <div class="card-stat">
+          <div class="stat-item"><span class="stat-num">15<em>+</em></span><span class="stat-label">可视化图表</span></div>
+          <div class="stat-item"><span class="stat-num">实时<em></em></span><span class="stat-label">数据联动分析</span></div>
+        </div>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">农科慧览视界</div>
+      <p class="footer-text">解决三农问题重中之重</p>
+      <p class="footer-copy">图片、文字来源于网络 · AGRICULTURAL VISUAL ANALYSIS PLATFORM</p>
+    </div>
+  </footer>
+
+  <script>
+    // 粒子
+    (function () {
+      const canvas = document.getElementById('particles');
+      const ctx = canvas.getContext('2d');
+      let W, H, pts = [];
+      function resize() { W = canvas.width = innerWidth; H = canvas.height = innerHeight; }
+      function Pt() { this.reset(); }
+      Pt.prototype.reset = function () {
+        this.x = Math.random() * W; this.y = Math.random() * H;
+        this.r = Math.random() * 1.1 + 0.3;
+        this.vx = (Math.random() - 0.5) * 0.25; this.vy = -Math.random() * 0.2 - 0.05;
+        this.a = Math.random() * 0.4 + 0.1;
+        this.c = Math.random() > 0.5 ? `rgba(200,168,75,${this.a})` : `rgba(116,198,157,${this.a})`;
+      };
+      Pt.prototype.tick = function () {
+        this.x += this.vx; this.y += this.vy;
+        if (this.y < -4 || this.x < -4 || this.x > W + 4) this.reset();
+      };
+      Pt.prototype.draw = function () {
+        ctx.beginPath(); ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+        ctx.fillStyle = this.c; ctx.fill();
+      };
+      resize();
+      pts = Array.from({ length: 80 }, () => new Pt());
+      (function loop() {
+        ctx.clearRect(0, 0, W, H);
+        pts.forEach(p => { p.tick(); p.draw(); });
+        requestAnimationFrame(loop);
+      })();
+      window.addEventListener('resize', resize);
+    })();
+
+    // 滚动入场
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
 </html>

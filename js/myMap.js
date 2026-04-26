@@ -1,6 +1,7 @@
 (function() {
-  // 1. 实例化对象
-  var myChart = echarts.init(document.querySelector(".map .chart"));
+  var el = document.querySelector(".map .chart");
+  if (!el) return;
+  var myChart = echarts.init(el);
   // // 2. 指定配置和数据
   // var geoCoordMap = {
   //   上海: [121.4648, 31.2891],

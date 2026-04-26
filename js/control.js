@@ -1,4 +1,4 @@
-show3();
+if (document.getElementById("div3")) { show3(); }
 function show() {
     document.getElementById("div1").style.display = "none";
     document.getElementById("div2").style.display = "none";
@@ -52,7 +52,7 @@ function show4() {
 };
 
 
-zuo1();
+if (document.getElementById("cdrf1")) { zuo1(); }
 function zuo1() {
     document.getElementById("cdrf1").style.display = "none";
     document.getElementById("cdrf2").style.display = "block";
@@ -83,32 +83,30 @@ function zuo4() {
 
 
 // ToSingle1();
-ToSingle1();
+if (document.getElementById("back1")) { ToSingle1(); }
 function ToSingle1() {
-    // alert(1)
     document.getElementById("back1").style.display = "block";
-    document.getElementById("back2").style.display = "none";//2
+    document.getElementById("back2").style.display = "none";
     document.getElementById("back3").style.display = "none";
     document.getElementById("back4").style.display = "none";
 };
 
 function ToSingle2() {
-    // alert(2)
     document.getElementById("back2").style.display = "block";
-    document.getElementById("back1").style.display = "none";//1
+    document.getElementById("back1").style.display = "none";
     document.getElementById("back3").style.display = "none";
     document.getElementById("back4").style.display = "none";
 };
 function ToSingle3() {
     document.getElementById("back2").style.display = "none";
-    document.getElementById("back3").style.display = "block";//3
+    document.getElementById("back3").style.display = "block";
     document.getElementById("back1").style.display = "none";
     document.getElementById("back4").style.display = "none";
 };
 
 function ToSingle4() {
     document.getElementById("back2").style.display = "none";
-    document.getElementById("back4").style.display = "block";//4
+    document.getElementById("back4").style.display = "block";
     document.getElementById("back1").style.display = "none";
     document.getElementById("back3").style.display = "none";
 };

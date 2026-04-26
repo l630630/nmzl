@@ -1,6 +1,7 @@
 (function () {
-    // 实例化对象
-    var myChart = echarts.init(document.querySelector(".line .map2"));
+    var el = document.querySelector(".line .map2");
+    if (!el) return;
+    var myChart = echarts.init(el);
 
 
 

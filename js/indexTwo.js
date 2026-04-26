@@ -389,17 +389,12 @@
     option = {
         // backgroundColor: "#1a4377",
         title: {
-            text: '农问题概览',
-            textStyle: {
-              color: 'white',
-              fontSize: "0.25rem",
-            },
-            top:"110px",
+            show: false,
           },
         tooltip: {},
         animationDurationUpdate: 1500,
         animationEasingUpdate: "quinticInOut",
-        color: ["#83e0ff", "#45f5ce", "#b158ff"],
+        color: ["#74c69d", "#c8a84b", "#52b788"],
         series: [
           {
             type: "graph",

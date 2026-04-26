@@ -1,97 +1,173 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
-	<meta charset="UTF-8">
-	<title>乡村振兴，科创助力——农纬智析云台</title>
-	<link href="css/style.css" rel="stylesheet" type="text/css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>智慧农耕，数智赋能 —— 农科慧览视界</title>
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
 
-	<div class="case-content-bg case-content-info">
-		<div class="case-box">
-			<h3 class="case-box-title">
-				<em class="case-box-title-one">乡村振兴，科技助力——农纬智析云台</em>
-				<span>《中共中央国务院关于做好2024年全面推进乡村振兴重点工作的意见》指出，全面建设社会主义现代化国家的征程中，最深厚最坚实的基础依然在农村。全球局势深刻复杂变化，我国正处于重要战略机遇期与风险挑战凸显期交织的阶段，各种不确定性和不稳定性因素持续增多，稳固“三农”压舱石地位极为关键、丝毫马虎不得。
-				<br>
-				坚持将“三农”问题视为全党工作的重中之重，汇聚全党全社会的磅礴力量，共同推动乡村振兴事业迈向新台阶。
+  <!-- 粒子背景 -->
+  <canvas id="particles"></canvas>
 
-				</span>
-			</h3>
+  <div class="case-content-bg case-content-info">
+    <div class="case-box">
 
+      <!-- 标题区 -->
+      <h3 class="case-box-title">
+        <em class="case-box-title-one">智慧农耕，数智赋能 —— 农科慧览视界</em>
+        <div class="title-divider"><span class="title-divider-icon"></span></div>
+        <span>
+          《中共中央国务院关于做好2024年全面推进乡村振兴重点工作的意见》指出，全面建设社会主义现代化国家的征程中，最深厚最坚实的基础依然在农村。坚持将"三农"问题视为全党工作的重中之重，汇聚全党全社会的磅礴力量，共同推动乡村振兴事业迈向新台阶。
+        </span>
+      </h3>
 
-			<div class="case-wrapper clearfix">
-				<div class="case-item" onclick="demo()">
-					<div class="case-item-bg case-item-bg1"></div>
-					<div class="case-item-title">三农问题</div>
-					<div class="case-item-text">
-						坚持把解决好“三农”问题作为全党工作重中之重 举全党全社会之力推动乡村振兴
-					</div>
-					<div class="case-item-doc">
-						<p>农民、农业、农村及从事行业、居住地域和主体身份三位一体的问题</p>
-					</div>
-				</div>
-				<div class="case-item" onclick="demo1()">
-					<div class="case-item-bg case-item-bg2"></div>
-					<div class="case-item-title">三农问题可视化</div>
-					<div class="case-item-text">
-						三农领域涉及极广，单一的数据并不能直观的反应问题，本项目通过对极大量的数据进行整合可视化。
-						更加直观简洁，直击问题关键。
+      <!-- 卡片区 -->
+      <div class="case-wrapper">
 
-					</div>
-					<div class="case-item-doc">
-						<p>使用15个可视化图表联动直击关键</p>
-					</div>
-				</div>
-				<div class="case-item" onclick="demo3()">
-					<div class="case-item-bg case-item-bg3"></div>
-					<div class="case-item-title">政策与指标画像</div>
-					<div class="case-item-text">
-						农业是国之根本，力求在最短时间内,补上三农领域的短板,完成我国农业农村发展的目标.
-					</div>
-					<div class="case-item-doc">
-						<p>三农政策、农民画像、恩格尔系数</p>	
+        <div class="case-item" onclick="demo()">
+          <div class="case-item-bg case-item-bg1"></div>
+          <div class="case-item-title">三农问题</div>
+          <div class="case-item-text">
+            坚持把解决好"三农"问题作为全党工作重中之重，举全党全社会之力推动乡村振兴。
+          </div>
+          <div class="case-item-doc">
+            <p>农民、农业、农村三位一体的核心议题</p>
+          </div>
+        </div>
 
-					</div>
-				</div>
-				<div class="case-item" onclick="demo2()">
-					<div class="case-item-bg case-item-bg4"></div>
-					<div class="case-item-title">词云及概览</div>
-					<div class="case-item-text">
-						党的二十大擘画了以中国式现代化全面推进中华民族伟大复兴的宏伟蓝图。必须加快农业农村现代化。强国必先强农，农强方能国强。
-					</div>
-					<div class="case-item-doc">
-						<p>乡村振兴、农村建设、粮食生产···</p>
+        <div class="case-item" onclick="demo1()">
+          <div class="case-item-bg case-item-bg2"></div>
+          <div class="case-item-title">三农可视化</div>
+          <div class="case-item-text">
+            通过对海量数据进行整合可视化，更加直观简洁，直击问题关键所在。
+          </div>
+          <div class="case-item-doc">
+            <p>15个可视化图表联动直击关键</p>
+          </div>
+        </div>
 
-					</div>
+        <div class="case-item" onclick="demo3()">
+          <div class="case-item-bg case-item-bg3"></div>
+          <div class="case-item-title">政策与指标画像</div>
+          <div class="case-item-text">
+            农业是国之根本，力求在最短时间内补上三农领域的短板，完成农业农村发展目标。
+          </div>
+          <div class="case-item-doc">
+            <p>三农政策 · 农民画像 · 恩格尔系数</p>
+          </div>
+        </div>
 
-				</div>
+        <div class="case-item" onclick="demo2()">
+          <div class="case-item-bg case-item-bg4"></div>
+          <div class="case-item-title">词云及概览</div>
+          <div class="case-item-text">
+            党的二十大擘画了以中国式现代化全面推进中华民族伟大复兴的宏伟蓝图，强国必先强农。
+          </div>
+          <div class="case-item-doc">
+            <p>乡村振兴 · 农村建设 · 粮食生产</p>
+          </div>
+        </div>
 
-			</div>
-		</div>
-	</div>
+      </div>
+    </div>
 
-	<script>
-		function demo() {
-			window.location = "../html/about.html";
+    <div class="page-footer">AGRICULTURAL VISUAL ANALYSIS PLATFORM &nbsp;·&nbsp; 农科慧览视界
+</div>
+  </div>
 
-		};
+  <script>
+    // ── 粒子系统 ──
+    (function () {
+      const canvas = document.getElementById('particles');
+      const ctx = canvas.getContext('2d');
+      let W, H, particles = [];
 
-		function demo1() {
-			window.location = "../index.html";
+      function resize() {
+        W = canvas.width  = window.innerWidth;
+        H = canvas.height = window.innerHeight;
+      }
 
-		};
-		function demo2() {
-			window.location = "../indexTow.html";
+      function Particle() {
+        this.reset();
+      }
+      Particle.prototype.reset = function () {
+        this.x  = Math.random() * W;
+        this.y  = Math.random() * H;
+        this.r  = Math.random() * 1.2 + 0.3;
+        this.vx = (Math.random() - 0.5) * 0.3;
+        this.vy = (Math.random() - 0.5) * 0.3 - 0.1;
+        this.alpha = Math.random() * 0.5 + 0.1;
+        // 金色或绿色
+        this.color = Math.random() > 0.5
+          ? `rgba(200,168,75,${this.alpha})`
+          : `rgba(116,198,157,${this.alpha})`;
+      };
+      Particle.prototype.update = function () {
+        this.x += this.vx;
+        this.y += this.vy;
+        if (this.y < -5 || this.x < -5 || this.x > W + 5) this.reset();
+      };
+      Particle.prototype.draw = function () {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+      };
 
-		};
-		function demo3() {
-			window.location = "../indexSingle.html";
+      function init() {
+        resize();
+        particles = Array.from({ length: 120 }, () => new Particle());
+      }
 
-		};
-	</script>
+      function loop() {
+        ctx.clearRect(0, 0, W, H);
+        particles.forEach(p => { p.update(); p.draw(); });
+
+        // 连线
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 100) {
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.strokeStyle = `rgba(200,168,75,${0.06 * (1 - dist / 100)})`;
+              ctx.lineWidth = 0.5;
+              ctx.stroke();
+            }
+          }
+        }
+        requestAnimationFrame(loop);
+      }
+
+      window.addEventListener('resize', () => { resize(); });
+      init();
+      loop();
+    })();
+
+    // ── 卡片入场动画 ──
+    document.querySelectorAll('.case-item').forEach((el, i) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = `opacity 0.6s ${0.8 + i * 0.12}s ease, transform 0.6s ${0.8 + i * 0.12}s cubic-bezier(0.16,1,0.3,1)`;
+      setTimeout(() => {
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+      }, 50);
+    });
+
+    // ── 页面跳转 ──
+    function demo()  { window.location = "../html/about.html"; }
+    function demo1() { window.location = "../index.html"; }
+    function demo2() { window.location = "../indexTow.html"; }
+    function demo3() { window.location = "../indexSingle.html"; }
+  </script>
 
 </body>
-
 </html>

@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/indexSingle-theme.css">
+    <link rel="stylesheet" href="css/index-theme.css">
 
     <!-- 地图 -->
     <link href="css/chunk-7305b8f4.b1341d14.css" rel="prefetch">
-    <link href="js/chunk-7305b8f4.daf3c850.js" rel="prefetch">
+    <link href="js/chunk-7305b8f4.daf3c851.js" rel="prefetch">
     <link href="css/chunk-vendors.a0d11cda.css" rel="preload" as="style">
     <link href="js/app.cd09a435.js" rel="preload" as="script">
     <link href="js/chunk-vendors.e52e50e8.js" rel="preload" as="script">
@@ -18,13 +20,12 @@
 
     <!-- 引入 ECharts -->
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.2.1/dist/echarts.min.js"></script>
-    <script src="js/control.js"></script>
 
     <!-- 引入 Baidu Map 扩展组件 -->
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.2.1/dist/extension/bmap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
-    <!-- 按钮样式 -->
-    <link rel="stylesheet" href="css/buttonstyle.css">
+    <!-- 按钮样式由 indexSingle-theme.css 统一处理 -->
+    <!-- <link rel="stylesheet" href="css/buttonstyle.css"> -->
 
 
     <!-- 左右滑动插件 -->
@@ -91,10 +92,10 @@
         </div>
         <div class="columnSingle">
             <div class="panelThree singlebar">
-                <div class="chart1" id="back1">2022乡村宽带网络普及指数及省份排行top5</div>
-                <div class="chart2" id="back2">2022移动互联网普及指数省份top5</div>
-                <div class="chart3" id="back3">农村用户细分类型app安装率 (产业数字化场景)</div>
-                <div class="chart4" id="back4">农村用户细分类型app安装率 (数字生活场景)</div>
+                <div class="chart1" id="back1" style="width:100%;height:100%;min-height:500px;"></div>
+                <div class="chart2" id="back2" style="width:100%;height:100%;min-height:500px;display:none;"></div>
+                <div class="chart3" id="back3" style="width:100%;height:100%;min-height:500px;display:none;"></div>
+                <div class="chart4" id="back4" style="width:100%;height:100%;min-height:500px;display:none;"></div>
 
                 <div class="panelThree-footer"></div>
             </div>
@@ -105,25 +106,40 @@
 <script src="./js/flexible.js"></script>
 <script src="js/indexSingle1.js"></script>
 
-<script src="js/control.js"></script>
 <script>
-    ToSingle1();
-    var t = null
-    t = setTimeout(time, 1000)
-    function time() {
-        clearInterval(t)//清楚定时器
-        dt = new Date()
-        var y = dt.getFullYear()
-        var mt = dt.getMonth() + 1
-        var day = dt.getDate()
-        var h = dt.getHours()
-        var m = dt.getMinutes()
-        var s = dt.getSeconds()
-        document.querySelector(".showTime").innerHTML = '当前时间:' + y + '年' + mt + '月' + day
-            + '日' + '-' + h + '时' + m + '分' + s + '秒'
-        t = setTimeout(time, 1000)//设定定时器，循环运行
+    // ToSingle 切换函数（仅用于本页）
+    var _charts = {}; // 存储图表实例，切换时 resize
+    window._charts = _charts;
+
+    function _showChart(id) {
+        ['back1','back2','back3','back4'].forEach(function(bid) {
+            document.getElementById(bid).style.display = bid === id ? 'block' : 'none';
+        });
+        // 延迟一帧再 resize，确保容器已可见
+        setTimeout(function() {
+            if (_charts[id]) _charts[id].resize();
+        }, 50);
     }
-</script>
+
+    function ToSingle1() { _showChart('back1'); }
+    function ToSingle2() { _showChart('back2'); }
+    function ToSingle3() { _showChart('back3'); }
+    function ToSingle4() { _showChart('back4'); }
+
+    // 初始显示第一个
+    ToSingle1();
+
+    // 时钟
+    var t = null;
+    t = setTimeout(time, 1000);
+    function time() {
+        clearInterval(t);
+        dt = new Date();
+        var y = dt.getFullYear(), mt = dt.getMonth() + 1, day = dt.getDate();
+        var h = dt.getHours(), m = dt.getMinutes(), s = dt.getSeconds();
+        document.querySelector(".showTime").innerHTML = '当前时间:' + y + '年' + mt + '月' + day + '日-' + h + '时' + m + '分' + s + '秒';
+        t = setTimeout(time, 1000);
+    }</script>
 
 
 

@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=ZCOOL+XiaoWei&display=swap');
+
+/* ── CSS 变量 ── */
+:root {
+  --gold: #c8a84b;
+  --gold-light: #e8c96a;
+  --green: #2d6a4f;
+  --green-glow: #74c69d;
+  --teal: #02a6b5;
+  --dark: #060c08;
+  --panel-bg: rgba(8, 18, 12, 0.78);
+  --panel-border: rgba(200, 168, 75, 0.2);
+  --corner: var(--gold);
+  --text-primary: #f0ead6;
+  --text-dim: rgba(240, 234, 214, 0.55);
+}
+
+/* ── 全局字体 & 背景 ── */
+body {
+  font-family: 'Noto Serif SC', serif !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 背景暗化叠层 */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(45,106,79,0.22) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 90% 90%, rgba(200,168,75,0.08) 0%, transparent 50%),
+    linear-gradient(180deg, rgba(6,12,8,0.45) 0%, rgba(6,12,8,0.25) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Header ── */
+#header h1 {
+  font-family: 'ZCOOL XiaoWei', serif !important;
+  font-size: 0.44rem !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.08em;
+  background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 50%, var(--green-glow) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent !important;
+}
+
+#header .showTime {
+  color: var(--text-dim) !important;
+  font-family: 'Noto Serif SC', serif !important;
+  font-size: 0.2rem !important;
+  letter-spacing: 0.04em;
+}
+
+#header .hrefgo {
+  font-family: 'Noto Serif SC', serif !important;
+  font-size: 0.2rem !important;
+}
+
+#header .hrefgo a {
+  color: var(--text-dim) !important;
+  transition: color 0.3s;
+}
+#header .hrefgo a:hover { color: var(--gold-light) !important; }
+
+/* ── 所有面板统一风格 ── */
+#mainbox .panel,
+#mainbox .panel1,
+#mainbox .panel2,
+#mainbox .panelThree {
+  border-color: var(--panel-border) !important;
+  background-color: var(--panel-bg) !important;
+  backdrop-filter: blur(8px);
+  transition: border-color 0.35s ease, box-shadow 0.35s ease !important;
+}
+
+#mainbox .panel:hover,
+#mainbox .panel1:hover,
+#mainbox .panel2:hover {
+  transform: none !important;
+  border-color: rgba(200,168,75,0.45) !important;
+  box-shadow: 0 0 24px rgba(200,168,75,0.08), inset 0 0 20px rgba(200,168,75,0.03) !important;
+}
+
+/* 四角装饰改为金色 */
+#mainbox .panel::before,
+#mainbox .panel::after,
+#mainbox .panel1::before,
+#mainbox .panel1::after,
+#mainbox .panel2::before,
+#mainbox .panel2::after,
+#mainbox .panelThree::before,
+#mainbox .panelThree::after {
+  border-color: var(--gold) !important;
+  width: 12px !important;
+  height: 12px !important;
+}
+
+#mainbox .panel .panel-footer::before,
+#mainbox .panel .panel-footer::after,
+#mainbox .panelThree .panelThree-footer::before,
+#mainbox .panelThree .panelThree-footer::after {
+  border-color: var(--gold) !important;
+  width: 12px !important;
+  height: 12px !important;
+}
+
+/* ── 面板标题 ── */
+#mainbox .panel h2,
+#mainbox .panel1 h2,
+#mainbox .panel2 h2 {
+  font-family: 'ZCOOL XiaoWei', serif !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.1em;
+  background: linear-gradient(90deg, var(--gold-light), var(--gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent !important;
+}
+
+/* ── 左侧切换按钮 ── */
+.switch2 {
+  border: 1px solid rgba(200,168,75,0.25) !important;
+  border-left: 3px solid var(--gold) !important;
+  background: rgba(10,21,16,0.85) !important;
+  color: var(--text-dim) !important;
+  font-family: 'Noto Serif SC', serif !important;
+  font-size: 13px !important;
+  letter-spacing: 0.06em;
+  border-radius: 2px !important;
+  text-align: left !important;
+  padding: 0 16px !important;
+  box-shadow: none !important;
+  transition: color 0.3s, border-color 0.3s, background 0.3s !important;
+  position: relative;
+  overflow: hidden;
+}
+.switch2:hover {
+  color: var(--gold-light) !important;
+  border-color: rgba(200,168,75,0.55) !important;
+  border-left-color: var(--gold-light) !important;
+  background: rgba(13,26,16,0.95) !important;
+}
+.switch2:active { transform: scale(0.98) !important; }
+
+/* ── divDemo 按钮组 ── */
+#divDemo button {
+  border: 1px solid rgba(200,168,75,0.25) !important;
+  background: rgba(10,21,16,0.85) !important;
+  color: var(--text-dim) !important;
+  font-family: 'Noto Serif SC', serif !important;
+  font-size: 12px !important;
+  border-radius: 2px !important;
+  box-shadow: none !important;
+  transition: all 0.3s !important;
+}
+#divDemo button:hover {
+  color: var(--gold-light) !important;
+  border-color: rgba(200,168,75,0.5) !important;
+  background: rgba(13,26,16,0.95) !important;
+}
+
+/* ── 切换按钮 1/2/3/4 ── */
+.switch-btnx {
+  background: rgba(10,21,16,0.85) !important;
+  border: 1px solid rgba(200,168,75,0.25) !important;
+  color: var(--text-dim) !important;
+  font-family: 'Noto Serif SC', serif !important;
+  font-size: 12px !important;
+  border-radius: 2px !important;
+  box-shadow: none !important;
+  transition: all 0.3s !important;
+  width: 28px !important;
+  height: 28px !important;
+  padding: 0 !important;
+  text-align: center !important;
+}
+.switch-btnx:hover {
+  color: var(--gold-light) !important;
+  border-color: rgba(200,168,75,0.5) !important;
+}
+
+/* ── 滚动新闻区 ── */
+.centerBox {
+  background: rgba(8,18,12,0.6) !important;
+  border: 1px solid var(--panel-border) !important;
+}
+
+.wrap li p span:first-child {
+  color: var(--green-glow) !important;
+  font-size: 12px !important;
+  letter-spacing: 0.04em;
+}
+.wrap li p span:last-child {
+  color: var(--gold) !important;
+  font-size: 11px !important;
+  opacity: 0.8;
+}
+
+/* ── 滚动条 ── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--dark); }
+::-webkit-scrollbar-thumb { background: rgba(200,168,75,0.3); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(200,168,75,0.5); }
+
+/* ── 字体声明保留 ── */
+@font-face {
+  font-family: electronicFont;
+  src: url(../font/DS-DIGIT.TTF);
+}
